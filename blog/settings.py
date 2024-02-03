@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "account"
+    "account",
+    'django_heroku'
 ]
 
 MIDDLEWARE = [
@@ -76,9 +77,13 @@ WSGI_APPLICATION = "blog.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd1kuvurdg8phi5',
+        'USER': 'afafaycyffrjre',
+        'PASSWORD': '751bfaca0c7262227d31705f6754032d4bed04f450e0ddd0c1d26670285ecb8b',
+        'HOST': 'ec2-99-80-190-165.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
