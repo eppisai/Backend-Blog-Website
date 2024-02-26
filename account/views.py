@@ -40,9 +40,7 @@ class LoginView(APIView):
                     'data': serializer.errors,
                     'message': 'something went wrong',
                 }, status=status.HTTP_400_BAD_REQUEST)
-
-            response = serializer.get_jet_token(serialize.data)
-
+            response = serializer.get_jwt_token(serializer.data)
             return Response(response, status=status.HTTP_200_OK)
 
         except Exception as e:

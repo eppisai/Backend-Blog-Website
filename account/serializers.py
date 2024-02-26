@@ -33,15 +33,13 @@ class LoginSerializer(serializers.Serializer):
 
         return data
 
-    def get_jet_token(self, data):
+    def get_jwt_token(self, data):
         user = authenticate(username=data['username'], password=data['password'])
 
         if not user:
             return {'message' : 'invalid credentials', 'data': {}}
       
         refresh = RefreshToken.for_user(user)
-
-        return 
         return {
             'message' : 'login success', 
             'data': { 
